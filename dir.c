@@ -12,7 +12,7 @@ int main(){
   DIR * dirstream;
   struct dirent *curr;
   int total_size = 0;
-  dirstream = opendir("./apcs");
+  dirstream = opendir("./");
   
   curr = readdir(dirstream);
   printf("Printing files...\n");
@@ -26,7 +26,7 @@ int main(){
   }
   printf("Printing directories...\n");
   closedir(dirstream);
-  dirstream = opendir("./apcs");
+  dirstream = opendir("./");
   curr = readdir(dirstream);
   while(curr){
     if(curr->d_type & DT_DIR){
